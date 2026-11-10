@@ -19,6 +19,107 @@ function App() {
   const { theme, toggleTheme } = useTheme()
   const isDark = theme === 'dark'
 
+
+const projects = [
+  {
+    number: "01",
+    title: "Healthcare Master Data Management",
+    company: "Capgemini",
+    role: "Software Engineer",
+    duration: "June 2025 – Present",
+    category: "Professional Experience",
+    description:
+      "Developed backend microservices and cloud-based data processing workflows for a healthcare Master Data Management (MDM) solution to centralize and standardize patient information.",
+    contributions: [
+      "Built and deployed Flask-based RESTful microservices, modularizing core services with an average response time of 200ms under load.",
+      "Worked with GCP Pub/Sub, Cloud Storage, Secret Manager, BigQuery and Cloud Spanner to process and persist approximately 200K daily records.",
+      "Implemented Jenkins CI/CD pipelines supporting progressive deployments and 99.9% system uptime."
+    ],
+    stack: [
+      "Python",
+      "Flask",
+      "REST APIs",
+      "GCP",
+      "Pub/Sub",
+      "BigQuery",
+      "Cloud Spanner",
+      "Jenkins"
+    ]
+  },
+  {
+    number: "02",
+    title: "Dynamic Airflow DAG Generation",
+    company: "VNC Digital Services",
+    role: "Data Engineer",
+    duration: "Jan 2025 – June 2025",
+    category: "Professional Experience",
+    description:
+      "Developed a Python-based API service to dynamically generate Apache Airflow DAGs and automate data pipeline scheduling and orchestration.",
+    contributions: [
+      "Created an API service to generate dynamic DAG definitions in Apache Airflow.",
+      "Implemented scheduling capabilities to streamline data pipeline orchestration and processing workflows.",
+      "Enabled automated DAG creation and scheduling through SSH, reducing developer and operations effort by at least one hour per script."
+    ],
+    stack: [
+      "Python",
+      "Apache Airflow",
+      "REST APIs",
+      "SSH",
+      "DAG Automation",
+      "Data Orchestration"
+    ]
+  },
+  {
+    number: "03",
+    title: "Automated Cloud Billing & Spark Optimization",
+    company: "Reliance JIO",
+    role: "Data Engineering Intern",
+    duration: "Oct 2024 – Dec 2024",
+    category: "Professional Experience",
+    description:
+      "Worked on an automated invoicing system for dynamic cloud pricing, processing billing data from multiple cloud platforms.",
+    contributions: [
+      "Developed an automated invoicing system for dynamic cloud pricing, improving invoicing accuracy by 100%.",
+      "Integrated billing data from AWS and GCP across JSON, CSV and Parquet formats.",
+      "Applied Spark optimization techniques, including caching and broadcast joins, reducing processing time by 20% for daily loads of approximately 2 million records."
+    ],
+    stack: [
+      "Python",
+      "PySpark",
+      "Spark SQL",
+      "AWS",
+      "GCP",
+      "JSON",
+      "CSV",
+      "Parquet"
+    ]
+  },
+  {
+    number: "04",
+    title: "COVID-19 Reporting Prediction System",
+    company: "Personal Project",
+    role: "Data Engineering Project",
+    duration: "Jan 2026 – Feb 2026",
+    category: "Personal Project",
+    description:
+      "Built a scalable data processing system using Python and Azure Data Factory to collect, process and prepare COVID-19 datasets for analytics and prediction.",
+    contributions: [
+      "Built modular transformation logic and optimized data workflows.",
+      "Developed time-series prediction functionality.",
+      "Integrated analytical outputs into dashboards for monitoring and insights."
+    ],
+    stack: [
+      "Python",
+      "Azure Data Factory",
+      "SQL",
+      "ETL",
+      "Time-Series Prediction",
+      "Data Analytics"
+    ]
+  }
+];
+
+
   const skills = [
     {
       icon: Database,
@@ -280,15 +381,194 @@ function App() {
         </div>
       </section>
 
-      <section id="projects" className="max-w-6xl mx-auto px-6 py-20 border-t border-slate-200 dark:border-slate-800">
-        <p className="text-emerald-500 text-sm font-semibold uppercase tracking-widest">
-          Selected Work
-        </p>
-        <h2 className="text-3xl font-bold mt-4">Featured Projects</h2>
-        <p className="mt-4 text-slate-500 dark:text-slate-400">
-          Engineering projects coming soon.
-        </p>
-      </section>
+      
+
+{/* PROJECTS SECTION */}
+<section
+  id="projects"
+  className="max-w-6xl mx-auto px-6 py-24 border-t border-slate-200 dark:border-slate-800"
+>
+  {/* Header */}
+  <div>
+    <p className="text-emerald-500 text-sm font-semibold uppercase tracking-widest">
+      03 / ENGINEERING WORK
+    </p>
+
+    <h2 className="text-4xl font-bold mt-5">
+      Featured Projects
+    </h2>
+
+    <p className="mt-4 max-w-2xl leading-relaxed text-slate-600 dark:text-slate-400">
+      Real-world engineering experience building cloud-based
+      data systems, scalable processing workflows and
+      automated data pipelines.
+    </p>
+  </div>
+
+  {/* Professional Experience */}
+  <div className="mt-14">
+    <div className="flex items-center gap-3 mb-7">
+      <span className="w-2 h-2 rounded-full bg-emerald-500" />
+      <h3 className="text-xl font-semibold">
+        Professional Experience
+      </h3>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {projects.filter(p => p.category === "Professional Experience").map((project) => (
+        <article
+          key={project.number}
+          className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 p-7 hover:border-emerald-500/60 transition-all duration-300"
+        >
+          <div className="flex justify-between items-center gap-3">
+            <span className="text-sm font-semibold text-emerald-500">
+              EXPERIENCE / {project.number}
+            </span>
+
+            <span className="text-xs text-slate-500">
+              {project.duration}
+            </span>
+          </div>
+
+          <div className="mt-6">
+            <span className="text-xs px-3 py-1 rounded-full border border-emerald-500/30 text-emerald-500">
+              {project.category}
+            </span>
+
+            <h3 className="text-2xl font-bold mt-5 leading-snug group-hover:text-emerald-500 transition-colors">
+              {project.title}
+            </h3>
+
+            <div className="mt-2 text-sm text-emerald-500">
+              {project.role} · {project.company}
+            </div>
+
+            <p className="mt-5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              {project.description}
+            </p>
+          </div>
+
+          <div className="mt-7">
+            <h4 className="text-sm font-semibold mb-4">
+              Key Contributions
+            </h4>
+
+            <ul className="space-y-3">
+              {project.contributions.map((item, index) => (
+                <li
+                  key={index}
+                  className="flex gap-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400"
+                >
+                  <span className="text-emerald-500 mt-1 shrink-0">
+                    →
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-7 pt-6 border-t border-slate-200 dark:border-slate-800">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-4">
+              Technologies
+            </h4>
+
+            <div className="flex flex-wrap gap-2">
+              {project.stack.map(technology => (
+                <span
+                  key={technology}
+                  className="px-3 py-1.5 rounded-full text-xs border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300"
+                >
+                  {technology}
+                </span>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+
+  {/* Personal Projects */}
+  <div className="mt-20">
+    <div className="flex items-center gap-3 mb-7">
+      <span className="w-2 h-2 rounded-full bg-slate-400" />
+      <h3 className="text-xl font-semibold">
+        Personal Projects
+      </h3>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {projects.filter(p => p.category === "Personal Project").map((project) => (
+        <article
+  key={project.number}
+  style={
+    project.number === "03"
+      ? {
+          gridColumn: "1 / -1",
+          width: "50%",
+          justifySelf: "center",
+        }
+      : undefined
+  }
+  className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 p-7 hover:border-emerald-500/60 transition-all duration-300"
+>
+          <span className="text-sm font-semibold text-emerald-500">
+            PROJECT / {project.number}
+          </span>
+
+          <p className="text-xs text-slate-500 mt-5">
+            {project.duration}
+          </p>
+
+          <h3 className="text-2xl font-bold mt-3">
+            {project.title}
+          </h3>
+
+          <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            {project.description}
+          </p>
+
+          <div className="mt-7">
+            <h4 className="text-sm font-semibold mb-3">
+              Implementation
+            </h4>
+
+            <ul className="space-y-3">
+              {project.contributions.map((item, index) => (
+                <li
+                  key={index}
+                  className="flex gap-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400"
+                >
+                  <span className="text-emerald-500">→</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-7 pt-6 border-t border-slate-200 dark:border-slate-800">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-4">
+              Technologies
+            </h4>
+
+            <div className="flex flex-wrap gap-2">
+              {project.stack.map(technology => (
+                <span
+                  key={technology}
+                  className="px-3 py-1.5 rounded-full text-xs border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300"
+                >
+                  {technology}
+                </span>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       <section id="contact" className="max-w-6xl mx-auto px-6 py-20 border-t border-slate-200 dark:border-slate-800">
         <h2 className="text-3xl font-bold">Let's Connect.</h2>
