@@ -98,13 +98,16 @@ function App() {
     Get in Touch
   </a>
 
+  
   <a
-    href="/Vaishnavi_Resume.pdf"
-    download
-    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-emerald-500 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 transition-colors"
+    href="/vaishnavi_resume.pdf"
+    download="Vaishnavi_Resume.pdf"
+    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-slate-950 transition-colors"
   >
-    Download Resume <ArrowUpRight size={18} />
+    Download Resume
+    <ArrowUpRight size={18} />
   </a>
+
 
 </div>
 
@@ -146,18 +149,111 @@ function App() {
         </div>
       </section>
 
-      <section id="about" className="max-w-6xl mx-auto px-6 py-20 border-t border-slate-200 dark:border-slate-800">
-        <p className="text-emerald-500 text-sm font-semibold uppercase tracking-widest">
-          Introduction
+      
+
+<section
+  id="about"
+  className="max-w-6xl mx-auto px-6 py-24 border-t border-slate-200 dark:border-slate-800"
+>
+  <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20">
+
+    {/* Left Column */}
+    <div>
+      <p className="text-emerald-500 text-sm font-semibold uppercase tracking-widest">
+        01 / Introduction
+      </p>
+
+      <h2 className="text-4xl font-bold mt-8 leading-tight">
+        Engineering
+        <span className="block text-emerald-500">
+          with data.
+        </span>
+      </h2>
+    </div>
+
+    {/* Right Column */}
+    <div>
+      <p className="text-xl leading-relaxed text-slate-700 dark:text-slate-300">
+        I'm a Data Engineer focused on building reliable data
+        pipelines, scalable data processing workflows and
+        cloud-based solutions.
+      </p>
+
+      <p className="mt-7 leading-relaxed text-slate-600 dark:text-slate-400">
+        With a foundation in software engineering, I work
+        across data processing, backend development and
+        distributed systems. My technical experience includes
+        PySpark, SQL, Databricks, Kafka, Python and cloud
+        platforms including GCP and Azure.
+      </p>
+
+      
+      <p className="mt-7 leading-relaxed text-slate-600 dark:text-slate-400">
+        In my professional experience, I have worked on healthcare
+        Master Data Management (MDM), backend API development and
+        cloud-based data processing workflows. I have also handled
+        production incidents during hypercare, performed root cause
+        analysis and implemented enhancements to improve data
+        retrieval and system reliability.
+      </p>
+
+
+      <p className="mt-7 leading-relaxed text-slate-600 dark:text-slate-400">
+        I enjoy solving engineering problems involving data
+        transformation, pipeline reliability and system
+        scalability. My approach combines practical
+        problem-solving with clean, maintainable engineering
+        practices.
+      </p>
+
+      <div className="mt-10 grid grid-cols-2 gap-5 border-y border-slate-200 dark:border-slate-800 py-6">
+        <div>
+          <p className="text-2xl font-bold text-emerald-500">
+            PySpark
+          </p>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+            Distributed Data Processing
+          </p>
+        </div>
+
+        <div>
+          <p className="text-2xl font-bold text-emerald-500">
+            GCP & Azure
+          </p>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+            Cloud Data Platforms
+          </p>
+        </div>
+      </div>
+
+
+      {/* Areas of Focus */}
+      <div className="mt-12">
+        <p className="text-emerald-500 text-sm font-semibold uppercase tracking-widest mb-5">
+          Areas of Focus
         </p>
-        <h2 className="text-3xl font-bold mt-4">About Me</h2>
-        <p className="mt-6 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-400">
-          I'm a software engineering professional passionate
-          about data engineering, cloud platforms and scalable
-          data systems. I enjoy building reliable data pipelines
-          and solving complex engineering problems.
-        </p>
-      </section>
+
+        <div className="flex flex-wrap gap-3">
+          {[
+            'Data Pipelines',
+            'Distributed Processing',
+            'Cloud Data Engineering',
+            'Data Validation',
+            'Backend Systems',
+            'ETL / ELT',
+          ].map((item) => (
+            <span
+              key={item}
+              className="px-5 py-3 rounded-full border border-slate-300 dark:border-slate-700 text-sm text-slate-700 dark:text-slate-300 hover:border-emerald-500 hover:text-emerald-500 transition-colors"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section id="skills" className="max-w-6xl mx-auto px-6 py-20 border-t border-slate-200 dark:border-slate-800">
         <p className="text-emerald-500 text-sm font-semibold uppercase tracking-widest">
